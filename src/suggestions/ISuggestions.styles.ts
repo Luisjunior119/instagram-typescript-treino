@@ -14,7 +14,9 @@ export const FirstContentt = styled.div`
 `;
 export const PhotoTag = styled.div`
   cursor: pointer;
+  transition: 0.50s;
   img:hover {
+    transition: 0.50s;
     opacity: 80%;
   }
 `;
@@ -41,7 +43,9 @@ export const Followzada = styled.a`
   color: #0095f6;
   font-size: 12px;
   cursor: pointer;
+  transition: 0.50s;
   span:hover {
+    transition: 0.50s;
     color: #fff;
   }
 `;
