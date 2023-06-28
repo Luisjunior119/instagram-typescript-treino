@@ -1,10 +1,13 @@
+import { StoriesMap } from "../stories/StoriesMap"
 import Home from "./Home"
-import { Container } from "./Homezao.styles"
+import { Container} from "./Homezao.styles"
 import { data } from "./data"
+
 
 export const Homezao = () => {
   return (
     <Container>
+        <StoriesMap />
       {data.map((item) => {
         return(
           <Home
