@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 13vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #535353;
+`;
+
+export const ContentIcons = styled.div`
+  position: fixed;
+  z-index: 1;
+  width: 13vw;
+
 `;
 
 export const Logo = styled.div`
@@ -115,6 +121,22 @@ export const LogoCreate = styled.div`
   gap: 10px;
   border-radius: 5px;
   transition: 0.70s;
+
+  &:hover{
+    background-color: #535353;
+  }
+`;
+
+export const LogoMore = styled.div`
+  padding: 10px 255px 10px 10px;
+  align-items: center;
+  color: #fff;
+  display: flex;
+  position: fixed;
+  gap: 10px;
+  border-radius: 5px;
+  transition: 0.70s;
+  bottom: 20px;
 
   &:hover{
     background-color: #535353;
