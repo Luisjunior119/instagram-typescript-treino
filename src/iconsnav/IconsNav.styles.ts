@@ -128,7 +128,7 @@ export const LogoCreate = styled.div`
 `;
 
 export const LogoMore = styled.div`
-  padding: 10px 255px 10px 10px;
+  padding: 10px 225px 10px 10px;
   align-items: center;
   color: #fff;
   display: flex;
