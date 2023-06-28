@@ -1,7 +1,7 @@
-import { Container, Logo, LogoCompass, LogoCreate, LogoDirect, LogoHeart, LogoHome, LogoIcons, LogoReels, LogoSearch } from "./IconsNav.styles"
+import { Container, ContentIcons, Logo, LogoCompass, LogoCreate, LogoDirect, LogoHeart, LogoHome, LogoIcons, LogoMore, LogoReels, LogoSearch } from "./IconsNav.styles"
 
 import Logoo from "../assets/instagram.svg"
-import { Compass, PlayCircle, MagnifyingGlass, House, Chat, Heart, Plus } from "@phosphor-icons/react"
+import { Compass, PlayCircle, MagnifyingGlass, House, Chat, Heart, Plus, List } from "@phosphor-icons/react"
 
 
 
@@ -11,7 +11,8 @@ import { Compass, PlayCircle, MagnifyingGlass, House, Chat, Heart, Plus } from "
 const IconsNav = () => {
   return (
     <Container>
-
+      
+      <ContentIcons>
       <Logo>
         <img src={Logoo} alt="insta-logo" width={100} />
       </Logo>
@@ -56,10 +57,15 @@ const IconsNav = () => {
           <span>Criar</span>
         </LogoCreate>
 
+        <LogoMore>
+          <List size={32} color="#ffffff" weight="bold"/>
+          <span>Mais</span>
+        </LogoMore>
+
 
 
         </LogoIcons>
-
+      </ContentIcons>
       
     </Container>
   )
