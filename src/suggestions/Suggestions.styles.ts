@@ -37,6 +37,12 @@ export const LinkChange = styled.a`
   color: #0095f6;
   font-weight: 500;
   font-size: 12px;
+  transition: 0.50s;
+  cursor: pointer;
+  span:hover {
+    transition: 0.50s;
+    color: #fff;
+  }
 `;
 
 export const Divzao = styled.div`
