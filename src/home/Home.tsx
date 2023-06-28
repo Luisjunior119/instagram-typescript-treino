@@ -1,5 +1,5 @@
 import { BookmarkSimple, Chat, Heart, PaperPlaneTilt } from "@phosphor-icons/react";
-import { BackContent, Coments, Container, FirstRow, HomeContent, Iam, ImageContent, ImageProfile, Likes, NameTitle, ReactionsContent, SubTitle, Titles, Translater, UniqueIcon, } from "./Home.styles"
+import { BackContent, Coments, Container, ContentInfos, FirstRow, HomeContent, Iam, ImageContent, ImageProfile, Likes, NameTitle, ReactionsContent, SubTitle, Titles, Translater, UniqueIcon, } from "./Home.styles"
 import { useState } from "react";
 
 
@@ -23,14 +23,22 @@ interface IPostHome {
 
 const Home = ({image_profile, user_name, subtitle, image_post, likes, iam, translate, coments}: IPostHome ) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [isCommented, setIsCommented] = useState(false);
+  const [isMessager, setIsMessager] = useState(false);
 
   const handleLikeClick = () => {
       setIsLiked(!isLiked);
   };
+  const handleCommentClick = () => {
+    setIsCommented(!isCommented);
+};
+const handleMessageClick = () => {
+  setIsMessager(!isMessager);
+};
   
   return (
     <Container>
-
+          <BackContent>
       <HomeContent>
         <FirstRow>
           <ImageProfile>
@@ -46,8 +54,6 @@ const Home = ({image_profile, user_name, subtitle, image_post, likes, iam, trans
           </Titles>
           </FirstRow>
       </HomeContent>
-
-          <BackContent>
             <ImageContent>
               <img src={image_post.url} alt={image_post.alt} />
             </ImageContent>
@@ -58,14 +64,21 @@ const Home = ({image_profile, user_name, subtitle, image_post, likes, iam, trans
         ) : (
           <Heart size={28} color="#fff" onClick={handleLikeClick} />
         )}
-              <Chat size={28} color="#fff"></Chat>
-              <PaperPlaneTilt size={28} color="#ffffff" />
+        {isCommented ? (
+          <Chat size={28} color="#2e5164" onClick={handleCommentClick} />
+        ) : (
+          <Chat size={28} color="#fff" onClick={handleCommentClick}/>
+        )}
+        {isMessager ? (
+          <PaperPlaneTilt size={28} color="#2e5164" onClick={handleMessageClick} />
+        ) : (
+          <PaperPlaneTilt size={28} color="#fff" onClick={handleMessageClick}/>
+        )}
               <UniqueIcon>
                 <BookmarkSimple size={28} color="#ffffff" />
               </UniqueIcon>
             </ReactionsContent>
-          </BackContent>
-
+        <ContentInfos>
           <Likes>
             {likes}
           </Likes>
@@ -78,6 +91,9 @@ const Home = ({image_profile, user_name, subtitle, image_post, likes, iam, trans
           <Coments>
             {coments}
           </Coments>
+        </ContentInfos>
+          </BackContent>
+        
 
     </Container>
   )
